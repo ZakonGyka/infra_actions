@@ -86,3 +86,10 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен!
+    - name: slack-send
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        # Slack channel ID where message will be posted. Needed if using bot token
+        channel-id: C048KQKJXTP
+        # Message to post into Slack. Needed if using bot token
+        slack-message: ${{ github.workflow }} успешно выполнен!!!
